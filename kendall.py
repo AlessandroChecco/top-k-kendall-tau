@@ -1,6 +1,6 @@
 """Top-k kendall-tau distance.
 
-This module generalise kendall-tau as defined in [1] Fagin, Ronald, Ravi Kumar, and D. Sivakumar. "Comparing top k lists." SIAM Journal on Discrete Mathematics 17.1 (2003): 134-160.
+This module generalise kendall-tau as defined in [1]
 It returns a distance: 0 for identical (in the sense of top-k) lists and 1 if completely different.
 
 Example:
@@ -12,6 +12,8 @@ Example:
 
 Author: Alessandro Checco
 https://github.com/AlessandroChecco
+References
+[1] Fagin, Ronald, Ravi Kumar, and D. Sivakumar. "Comparing top k lists." SIAM Journal on Discrete Mathematics 17.1 (2003): 134-160.
 
 """
 import numpy as np
@@ -51,7 +53,6 @@ def kendall_top_k(a,b,k=None,p=0): #zero is equal 1 is max distance, compare wit
                 kendall += 1
     kendall += 2*p * special.binom(k-common_items.size,2)     #case 4
     kendall /= ((only_in_a.size + only_in_b.size + common_items.size)**2 ) #normalization
-#    kendall = 1 - kendall 
     return kendall
     
 if __name__ == "__main__":
