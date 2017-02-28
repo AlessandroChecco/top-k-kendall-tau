@@ -1,20 +1,20 @@
 """Top-k kendall-tau distance.
 
-This module generalise kendall-tau as defined in [1]
+This module generalise kendall-tau as defined in [1].
 It returns a distance: 0 for identical (in the sense of top-k) lists and 1 if completely different.
 
 Example:
-    Simply call kendall_top_k with two arrays of ratings (or also rankings) and k and p (default is 0, see [1]) as parameters::
+    Simply call kendall_top_k with two arrays of ratings (or also rankings) and k and p (default is 0, see [1]) as parameters:
 
-        $ a = np.array([1,2,3,4,5])
-        $ b = np.array
-        $ kendall_top_k(a,b,k=4)
+        import kendall
+        a = np.array([1,2,3,4,5])
+        b = np.array
+        kendall.kendall_top_k(a,b,k=4)
 
 Author: Alessandro Checco
-https://github.com/AlessandroChecco
+    https://github.com/AlessandroChecco
 References
 [1] Fagin, Ronald, Ravi Kumar, and D. Sivakumar. "Comparing top k lists." SIAM Journal on Discrete Mathematics 17.1 (2003): 134-160.
-
 """
 import numpy as np
 import scipy.stats as stats
@@ -27,7 +27,7 @@ def kendall_top_k(a,b,k=None,p=0): #zero is equal 1 is max distance, compare wit
     It returns a distance: 0 for identical (in the sense of top-k) lists and 1 if completely different.
 
     Example:
-        Simply call it with two arrays of ratings (or also rankings) and k and p (default is 0, see [1]) as parameters::
+        Simply call it with two arrays of ratings (or also rankings) and k and p (default is 0, see [1]) as parameters:
 
             $ a = np.array([1,2,3,4,5])
             $ b = np.array
