@@ -10,6 +10,6 @@ Simply call kendall_top_k with two arrays of ratings (or also rankings) and k an
 ```python
         import kendall
         a = np.array([1,2,3,4,5])
-        b = np.array
+        b = np.array([5,4,3,2,1])
         kendall.kendall_top_k(a,b,k=4)
 ```
