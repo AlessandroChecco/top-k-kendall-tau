@@ -36,6 +36,9 @@ def kendall_top_k(a,b,k=None,p=0): #zero is equal 1 is max distance, compare wit
 
     if k is None:
         k = a.size
+    if a.size != b.size:
+        raise NameError('The two arrays need to have same lengths')
+    k = min(k,a.size)
     a_top_k = np.argpartition(a,-k)[-k:]
     b_top_k = np.argpartition(b,-k)[-k:]
     common_items = np.intersect1d(a_top_k,b_top_k)
