@@ -13,3 +13,6 @@ Simply call kendall_top_k with two same-length arrays of ratings (or also rankin
         b = np.array([5,4,3,2,1])
         kendall.kendall_top_k(a,b,k=4)
 ```
+
+# Requirements
+python 3, numpy, scipy
