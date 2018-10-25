@@ -15,4 +15,4 @@ Simply call kendall_top_k with two same-length arrays of ratings (or also rankin
 ```
 
 # Requirements
-python 3, numpy, scipy
+numpy, scipy
