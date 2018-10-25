@@ -44,7 +44,7 @@ def kendall_top_k(a,b,k=None,p=0): #zero is equal 1 is max distance, compare wit
     common_items = np.intersect1d(a_top_k,b_top_k)
     only_in_a = np.setdiff1d(a_top_k, common_items)
     only_in_b = np.setdiff1d(b_top_k, common_items)
-    kendall = (1 - (stats.kendalltau(a[common_items], b[common_items])[0]/2+1/2)) * (common_items.size**2) #case 1
+    kendall = (1 - (stats.kendalltau(a[common_items], b[common_items])[0]/2+0.5)) * (common_items.size**2) #case 1
     if np.isnan(kendall): # degenerate case with only one item (not defined by Kendall)
         kendall = 0
     for i in common_items: #case 2
